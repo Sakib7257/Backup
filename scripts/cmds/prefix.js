@@ -1,11 +1,11 @@
-const fs = require("fs-extra");
+ const fs = require("fs-extra");
 const { utils } = global;
 
 module.exports = {
 config: {
 name: "prefix",
 version: "1.3",
-author: "NTKHang || Edit by Ayan",
+author: "xos Eren",
 countDown: 5,
 role: 0,
 shortDescription: "Thay đổi prefix của bot",
@@ -46,7 +46,7 @@ confirmGlobal: "𝐏𝐥𝐞𝐚𝐜𝐞 𝐫𝐞𝐚𝐜𝐭 𝐭𝐨 𝐜𝐨�
 confirmThisThread: "𝐏𝐥𝐞𝐚𝐜𝐞 𝐫𝐞𝐚𝐜𝐭 𝐭𝐨 𝐜𝐨𝐧𝐭𝐢𝐧𝐮𝐞 𝐜𝐡𝐚𝐧𝐠𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐛𝐨𝐱 𝐩𝐫𝐞𝐟𝐢𝐱",
 successGlobal: "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐟𝐥𝐲 𝐜𝐡𝐚𝐧𝐠𝐞𝐝 𝐘𝐨𝐮𝐫 𝐩𝐫𝐞𝐟𝐢𝐱 𝐭𝐨: %1",
 successThisThread: "Changed prefix in your box chat to: %1",
-myPrefix: "‣ 𝐆𝐥𝐨𝐛𝐚𝐥 𝐩𝐫𝐞𝐟𝐢𝐱: %1\n‣𝐘𝐨𝐮𝐫 𝐠𝐫𝐨𝐮𝐩 𝐩𝐫𝐞𝐟𝐢𝐱:  %2\n\n‣ 𝗔𝗱𝗺𝗶𝗻 \n𝗦 𝗔 𝗜 𝗙 \n‣𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 ⓕ\nhttps://m.me/ewrsaif570"
+myPrefix: "🌏‣ 𝐆𝐥𝐨𝐛𝐚𝐥 𝐩𝐫𝐞𝐟𝐢𝐱: %1\n🎀‣𝐘𝐨𝐮𝐫 𝐠𝐫𝐨𝐮𝐩 𝐩𝐫𝐞𝐟𝐢𝐱:  %2\n\n‣ 𝐀𝐝𝐦𝐢𝐧 \ 👑‣𝐒𝐚𝐤𝐢𝐛 \n\n‣𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 ⓕ\n‣https://www.facebook.com/tanjiro.kamado.414379"
 }
 },
 
@@ -57,7 +57,7 @@ onStart: async function ({ message, role, args, commandName, event, threadsData,
       await threadsData.set(event.threadID, null, "data.prefix");
       return message.reply({
         body: getLang("reset", global.GoatBot.config.prefix),
-        attachment: await utils.getStreamFromURL("https://i.imgur.com/GxR9yDj.jpeg") // Change Imgur link
+        attachment: await utils.getStreamFromURL("https://i.imgur.com/ASGN6F9.mp4") // Change Imgur link
       });
     }
 
@@ -73,7 +73,7 @@ onStart: async function ({ message, role, args, commandName, event, threadsData,
 
     return message.reply({
       body: args[1] === "-g" ? getLang("confirmGlobal") : getLang("confirmThisThread"),
-      attachment: await utils.getStreamFromURL("https://i.imgur.com/RylBk5G.jpeg") // Change Imgur link
+      attachment: await utils.getStreamFromURL("https://i.imgur.com/UChLWIl.jpeg") // Change Imgur link
     }, (err, info) => {
       formSet.messageID = info.messageID;
       global.GoatBot.onReaction.set(info.messageID, formSet);
@@ -89,13 +89,13 @@ onStart: async function ({ message, role, args, commandName, event, threadsData,
       fs.writeFileSync(global.client.dirConfig, JSON.stringify(global.GoatBot.config, null, 2));
       return message.reply({
         body: getLang("successGlobal", newPrefix),
-        attachment: await utils.getStreamFromURL("https://i.imgur.com/UChLWIl.jpeg") // Change Imgur link
+        attachment: await utils.getStreamFromURL("https://i.imgur.com/ASGN6F9.mp4") // Change Imgur link
       });
     } else {
       await threadsData.set(event.threadID, newPrefix, "data.prefix");
       return message.reply({
         body: getLang("successThisThread", newPrefix),
-        attachment: await utils.getStreamFromURL("https://i.imgur.com/UChLWIl.jpeg") // Change Imgur link
+        attachment: await utils.getStreamFromURL("https://i.imgur.com/ASGN6F9.mp4") // Change Imgur link
       });
     }
   },
@@ -107,7 +107,7 @@ onStart: async function ({ message, role, args, commandName, event, threadsData,
     if (event.body && event.body.toLowerCase() === "prefix") {
       return message.reply({
         body: getLang("myPrefix", globalPrefix, threadPrefix),
-        attachment: await utils.getStreamFromURL("https://i.imgur.com/WiJMB3V.mp4") // Change Imgur link
+        attachment: await utils.getStreamFromURL("https://i.imgur.com/ASGN6F9.mp4") // Change Imgur link
       });
     }
   }
